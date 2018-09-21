@@ -1,0 +1,22 @@
+[
+{ "source":
+      { "id": 1, "name": "Nypost.com" },
+  "author": "author pepe",
+  "id" : 1,
+  "title": "18 firefighters injured after cars burst into flames at mall",
+  "description": null,
+  "url": "https://nypost.com/2018/09/17/multiple-cars-catch-fire-at-kings-plaza-shopping-center/",
+  "urlToImage": null,
+  "publishedAt": "2018-09-17T17:40:20Z",
+  "content": null },
+{ "source":
+    { "id": 2, "name": "Cbssports.com" },
+ "id" :2,
+"author": "author jose",
+"title": "LeBron James has harsh words for Browns kicker Zane Gonzalez; Browns to reportedly dump him",
+"description": "One of the best kickers in NFL history apparently doesn\"t want to play in Cleveland",
+"url": "https://www.cbssports.com/nfl/news/lebron-james-has-harsh-words-for-browns-kicker-zane-gonzalez-browns-to-reportedly-dump-him/",
+"urlToImage": "https://sportshub.cbsistatic.com/i/r/2016/09/08/8e42328e-ea61-47bc-9eb8-bb61498dd8f2/thumbnail/770x433/f41e4e95e584db5e11c4207df23f212e/dan-bailey.jpg",
+"publishedAt": "2018-09-17T17:25:00Z",
+"content": "The Browns, who entered the season with one win in their last 32 games, should be 2-0 right now. Kicker Zane Gonzalez honked a field goal in overtime against the Steelers in Week 1 and on Sunday against the Saints, he missed two field goals and two extra poin… [+2000 chars]" }
+]
