@@ -10,17 +10,17 @@ const ArticlesContainer = ({ articles, addToCart }) => (
   <ArticlesList title="Articles">
     {articles.map(article =>
       <ArticleItem
-        key={article.source.id}
+        key={article.id}
         article={article}
         url={article.url}
-        onAddToCartClicked={() => addToCart(article.source.id)}  />
+        onAddToCartClicked={() => addToCart(article.id)}  />
     )}
   </ArticlesList>
 )
 
 ArticlesContainer.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
