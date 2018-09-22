@@ -26,7 +26,11 @@ const byId = (state = {}, action) => {
       case RECEIVE_ARTICLES_PARAM:
         return {
         ...state,
-         articles: action.articles
+        ...action.articles.reduce((obj, article) => {
+          obj[article.source.id] = article
+          return obj
+        }, {})
+        // articles: action.articles
         }
     default:
       const { articleId } = action
@@ -45,7 +49,7 @@ const visibleIds = (state = [], action) => {
     case RECEIVE_ARTICLES:
       return action.articles.map(article => article.id)
      case RECEIVE_ARTICLES_PARAM:
-       return action.articles
+       return action.articles.map(article => article.source.id)
     default:
       return state
   }

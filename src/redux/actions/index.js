@@ -12,9 +12,16 @@ const receiveArticles = articles => ({
 })
 
 export const getAllArticles = () => dispatch => {
-  var articles = axios.get(`${url}getTopNewsByCountry/${countryParam}`);
-    dispatch(receiveArticles(articles)
-  )
+  
+  axios.get(`${url}getTopNewsByCountry/${countryParam}`).then(response => {
+    console.log(response);  
+    dispatch(receiveArticles(response.data));
+    //res.send(response);
+  }).catch(function (error) {
+    console.log(error);      
+  });
+  
+  
 }
 
 const receiveProducts = products => ({

@@ -8,7 +8,7 @@ const App = () => (
     <hr/>
     <ProductsContainer />
     <hr/>
-     
+    <ArticlesContainer /> 
   </div>
 )
 
