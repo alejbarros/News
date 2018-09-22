@@ -7,21 +7,21 @@ const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:
 const countryParam = "us"
 
 const receiveArticles = articles => ({
- type: types.RECEIVE_ARTICLES_PARAM,
+ type: types.RECEIVE_ARTICLES,
  articles
 })
 
 export const getAllArticles = () => dispatch => {
   
   axios.get(`${url}getTopNewsByCountry/${countryParam}`).then(response => {
-    console.log(response);  
-    dispatch(receiveArticles(response.data));
-    //res.send(response);
+    var res = response.data;
+    res.forEach(function(element) {
+      element.id = Math.random();      
+    });
+    dispatch(receiveArticles(res));
   }).catch(function (error) {
     console.log(error);      
-  });
-  
-  
+  }); 
 }
 
 const receiveProducts = products => ({
