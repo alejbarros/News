@@ -1,13 +1,14 @@
 import React from 'react'
-import ProductsContainer from './ProductsContainer'
-import ArticlesContainer from './ArticlesContainer'
+import BarTop from './BarTop';
+import FooterNews from './FooterNews';
+import MainContainer from './MainContainer';
 
 const App = () => (
-  <div>
-    <h2>News Around the world</h2>
-    <hr/>
-    <ArticlesContainer /> 
-  </div>
+  <body class="w3-theme-l5">
+    <BarTop />   
+    <MainContainer />
+    <FooterNews />  
+  </body>
 )
 
 export default App

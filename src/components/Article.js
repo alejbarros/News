@@ -11,7 +11,7 @@ const styleParagraph  = {
 const Article = ({ title, description , publishedAt,content }) => (
   <div>   
     <span class="w3-right w3-opacity"> {publishedAt} </span>
-    <h3>{title}</h3>
+    <h4>{title}</h4>
     <h6>{description}</h6>
     <p style={styleParagraph}>{content}</p>   
   </div>  

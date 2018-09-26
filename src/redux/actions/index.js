@@ -1,5 +1,4 @@
 import shop from '../api/shop'
-import mock from '../api/articleMock'
 import * as types from '../constants/ActionTypes'
 import axios from 'axios'
 //const url = "http://localhost:5000/api/"
