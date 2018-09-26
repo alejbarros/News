@@ -13,6 +13,11 @@ const ArticlesContainer = ({ articles, addToCart }) => (
         key={article.id}
         article={article}
         url={article.url}
+        description = {article.description}
+        publishedAt = {article.publishedAt}
+        urlToImage = {article.urlToImage}
+        content = {article.content}
+        source = {article.source.name}
         onAddToCartClicked={() => addToCart(article.id)}  />
     )}
   </ArticlesList>
@@ -23,7 +28,12 @@ ArticlesContainer.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    description : PropTypes.string.isRequired,
+    publishedAt : PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    urlToImage : PropTypes.string.isRequired,
+    content : PropTypes.string.isRequired,
+    source : PropTypes.string.isRequired
   })).isRequired,
   addToCart: PropTypes.func.isRequired
 }
