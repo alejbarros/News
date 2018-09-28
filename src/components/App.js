@@ -3,8 +3,13 @@ import BarTop from './BarTop';
 import FooterNews from './FooterNews';
 import MainContainer from './MainContainer';
 
+const styleBackGround = {
+  'background-color': 'silver', 
+  'background-image': 'linear-gradient(to right, gray , silver)'
+}
+
 const App = () => (
-  <body class="w3-theme-l5">
+  <body style={styleBackGround}>
     <BarTop />   
     <MainContainer />
     <FooterNews />  

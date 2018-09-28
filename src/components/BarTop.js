@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+
 const BarTop = ({ }) => (
-  <div class="w3-top">
-    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-    </div>
+  <div class="w3-container w3-theme-d5">
+    <div class="w3-row w3-padding w3-gray">
+        <div class="w3-col s13">
+            <a href="#" aling="center" class="w3-button w3-block w3-gray">NEWS EVERYDAY ON THE WEB</a>
+        </div>        
+     </div>
   </div>
 )
 

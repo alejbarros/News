@@ -7,7 +7,7 @@ import ArticleItem from '../components/ArticleItem'
 import ArticlesList from '../components/ArticlesList'
 
 const ArticlesContainer = ({ articles, addToCart }) => (
-  <ArticlesList title="Articles">
+  <ArticlesList >
     {articles.map(article =>
       <ArticleItem
         key={article.id}

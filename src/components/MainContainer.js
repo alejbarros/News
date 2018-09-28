@@ -5,7 +5,7 @@ import PanelRight from './PanelRight';
 
 const styleMainContainer  = {
     'max-width':'1400px',
-    'margin-top':'80px',
+    'margin-top':'80px'
 };
 
 const MainContainer = ({ }) => (
