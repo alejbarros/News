@@ -13,7 +13,7 @@ module.exports = {
             category: categoryParam,
             language: languageParam,
             country: countryParam
-        }).then(response => {
+          }).then(response => {
             console.log(response.articles);
             res.send(response.articles);
         }).catch(function (error) {

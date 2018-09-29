@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ArticlesContainer from './ArticlesContainer'
 
 const PanelRight = ({ }) => (
@@ -8,7 +7,5 @@ const PanelRight = ({ }) => (
         <ArticlesContainer /> 
     </div>
 )
-
-
 
 export default PanelRight

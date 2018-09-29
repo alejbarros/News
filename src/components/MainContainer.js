@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import PanelLeft from './PanelLeft';
 import PanelRight from './PanelRight';
 
@@ -14,7 +13,5 @@ const MainContainer = ({ }) => (
         <PanelRight />
     </div>
 )
-
-
 
 export default MainContainer

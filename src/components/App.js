@@ -12,6 +12,7 @@ const App = () => (
   <body style={styleBackGround}>
     <BarTop />   
     <MainContainer />
+    <br></br>
     <FooterNews />  
   </body>
 )

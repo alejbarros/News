@@ -14,7 +14,6 @@ export const getTopNews = (data) => dispatch => {
   var category = data.category;
   var language = data.language;
   var country = data.country;
-  var source = data.source;
   var keyword = data.keyword;
   let urlService;
   if (category !== '' && country !== ''){
@@ -29,8 +28,27 @@ export const getTopNews = (data) => dispatch => {
     urlService = `${url}getTopNewsByKeywords/${keyword}`;
   }else if (language !==''){
     urlService = `${url}getTopNewsByLanguage/${language}`;
-  }else if (source !==''){
-    urlService = `${url}getTopNewsBySource/${source}`;
+  }
+
+  axios.get(urlService).then(response => {
+    var res = response.data;
+    res.forEach(function(element) {
+      element.id = Math.random();      
+    });
+    dispatch(receiveArticles(res));
+  }).catch(function (error) {
+    console.log(error);      
+  });   
+}
+
+export const getLatestNews = (data) => dispatch => {
+  var language = data.language;
+  var keyword = data.keyword;
+  let urlService;
+  if (keyword !=='' && language !== ''){
+    urlService = `${url}getAllNewsByKeywordsLanguage/${keyword}/${language}`;
+  } else if (keyword !==''){
+    urlService = `${url}/getAllNewsByKeywords/${keyword}`;
   }
   axios.get(urlService).then(response => {
     var res = response.data;
@@ -56,31 +74,6 @@ export const getAllArticles = () => dispatch => {
   }); 
 }
 
-
-export const getTopArticlesByCountry = (country) => dispatch => {
-  
-  axios.get(`${url}getTopNewsByCountry/${country}`).then(response => {
-    var res = response.data;
-    res.forEach(function(element) {
-      element.id = Math.random();      
-    });
-    dispatch(receiveArticles(res));
-  }).catch(function (error) {
-    console.log(error);      
-  }); 
-}
-
-const receiveProducts = products => ({
-  type: types.RECEIVE_PRODUCTS,
-  products
-})
-
-export const getAllProducts = () => dispatch => {
-  shop.getProducts(products => {
-    dispatch(receiveProducts(products))
-  })
-}
-
 const addToCartUnsafe = productId => ({
   type: types.ADD_TO_CART,
   productId
@@ -103,7 +96,6 @@ export const checkout = products => (dispatch, getState) => {
       type: types.CHECKOUT_SUCCESS,
       cart
     })
-    // Replace the line above with line below to rollback on failure:
-    // dispatch({ type: types.CHECKOUT_FAILURE, cart })
+    
   })
 }

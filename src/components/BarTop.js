@@ -1,6 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
 
 const BarTop = ({ }) => (
   <div class="w3-container w3-theme-d5">
