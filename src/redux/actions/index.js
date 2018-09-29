@@ -10,18 +10,6 @@ const receiveArticles = articles => ({
  articles
 })
 
-export const findTopNewsGeneral = (urlService) => dispatch => {
-  axios.get(urlService).then(response => {
-    var res = response.data;
-    res.forEach(function(element) {
-      element.id = Math.random();      
-    });
-    dispatch(receiveArticles(res));
-  }).catch(function (error) {
-    console.log(error);      
-  }); 
-}
-
 export const getTopNews = (data) => dispatch => {
   var category = data.category;
   var language = data.language;
@@ -30,27 +18,29 @@ export const getTopNews = (data) => dispatch => {
   var keyword = data.keyword;
   let urlService;
   if (category !== '' && country !== ''){
-    urlService = `${url}/getTopNewsByCategoryCountry/${category}/${country}`;
-    dispatch(findTopNewsGeneral(urlService));
+    urlService = `${url}getTopNewsByCategoryCountry/${category}/${country}`;
   }else if (keyword !=='' && language !== ''){
-    urlService = `${url}/getTopNewsByLanguageKeyword/${language}/${keyword}`;
-    dispatch(findTopNewsGeneral(urlService));
+    urlService = `${url}getTopNewsByLanguageKeyword/${language}/${keyword}`;
   }else if (category !==''){
-    urlService = `${url}/getTopNewsByCategory/${category}`;
-    dispatch(findTopNewsGeneral(urlService));
+    urlService = `${url}getTopNewsByCategory/${category}`;
   }else if (country !==''){
-    urlService = `${url}/getTopNewsByCountry/${country}`;
-    dispatch(findTopNewsGeneral(urlService));
+    urlService = `${url}getTopNewsByCountry/${country}`;
   }else if (keyword !==''){
-    urlService = `${url}/getTopNewsByKeywords/${keyword}`;
-    dispatch(findTopNewsGeneral(urlService));
+    urlService = `${url}getTopNewsByKeywords/${keyword}`;
   }else if (language !==''){
-    urlService = `${url}/getTopNewsByLanguage/${language}`;
-    dispatch(findTopNewsGeneral(urlService));
+    urlService = `${url}getTopNewsByLanguage/${language}`;
   }else if (source !==''){
-    urlService = `${url}/getTopNewsBySource/${source}`;
-    dispatch(findTopNewsGeneral(urlService));
-  }  
+    urlService = `${url}getTopNewsBySource/${source}`;
+  }
+  axios.get(urlService).then(response => {
+    var res = response.data;
+    res.forEach(function(element) {
+      element.id = Math.random();      
+    });
+    dispatch(receiveArticles(res));
+  }).catch(function (error) {
+    console.log(error);      
+  });   
 }
 
 export const getAllArticles = () => dispatch => {
