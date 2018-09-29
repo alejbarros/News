@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 import reducer from './redux/reducers'
-import { getAllProducts , getAllArticles } from './redux/actions'
+import { getAllArticles } from './redux/actions'
 import App from './components/App'
 
 const middleware = [ thunk ];
@@ -19,7 +19,6 @@ const store = createStore(
   applyMiddleware(...middleware)
 )
 
-store.dispatch(getAllProducts())
 store.dispatch(getAllArticles())
 
 render(

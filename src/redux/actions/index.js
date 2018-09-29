@@ -10,6 +10,49 @@ const receiveArticles = articles => ({
  articles
 })
 
+export const findTopNewsGeneral = (urlService) => dispatch => {
+  axios.get(urlService).then(response => {
+    var res = response.data;
+    res.forEach(function(element) {
+      element.id = Math.random();      
+    });
+    dispatch(receiveArticles(res));
+  }).catch(function (error) {
+    console.log(error);      
+  }); 
+}
+
+export const getTopNews = (data) => dispatch => {
+  var category = data.category;
+  var language = data.language;
+  var country = data.country;
+  var source = data.source;
+  var keyword = data.keyword;
+  let urlService;
+  if (category !== '' && country !== ''){
+    urlService = `${url}/getTopNewsByCategoryCountry/${category}/${country}`;
+    dispatch(findTopNewsGeneral(urlService));
+  }else if (keyword !=='' && language !== ''){
+    urlService = `${url}/getTopNewsByLanguageKeyword/${language}/${keyword}`;
+    dispatch(findTopNewsGeneral(urlService));
+  }else if (category !==''){
+    urlService = `${url}/getTopNewsByCategory/${category}`;
+    dispatch(findTopNewsGeneral(urlService));
+  }else if (country !==''){
+    urlService = `${url}/getTopNewsByCountry/${country}`;
+    dispatch(findTopNewsGeneral(urlService));
+  }else if (keyword !==''){
+    urlService = `${url}/getTopNewsByKeywords/${keyword}`;
+    dispatch(findTopNewsGeneral(urlService));
+  }else if (language !==''){
+    urlService = `${url}/getTopNewsByLanguage/${language}`;
+    dispatch(findTopNewsGeneral(urlService));
+  }else if (source !==''){
+    urlService = `${url}/getTopNewsBySource/${source}`;
+    dispatch(findTopNewsGeneral(urlService));
+  }  
+}
+
 export const getAllArticles = () => dispatch => {
   
   axios.get(`${url}getTopNewsByCountry/${countryParam}`).then(response => {
