@@ -23,6 +23,20 @@ export const getAllArticles = () => dispatch => {
   }); 
 }
 
+
+export const getTopArticlesByCountry = (country) => dispatch => {
+  
+  axios.get(`${url}getTopNewsByCountry/${country}`).then(response => {
+    var res = response.data;
+    res.forEach(function(element) {
+      element.id = Math.random();      
+    });
+    dispatch(receiveArticles(res));
+  }).catch(function (error) {
+    console.log(error);      
+  }); 
+}
+
 const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products
