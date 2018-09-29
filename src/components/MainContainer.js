@@ -7,7 +7,7 @@ const styleMainContainer  = {
     'margin-top':'80px'
 };
 
-const MainContainer = ({ }) => (
+const MainContainer = () => (
     <div class="w3-container w3-content" style={styleMainContainer}>
         <PanelLeft />
         <PanelRight />

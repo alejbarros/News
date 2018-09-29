@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BarTop = ({ }) => (
+const BarTop = () => (
   <div class="w3-container w3-theme-d5">
     <div class="w3-row w3-padding w3-gray">
         <div class="w3-col s13">

@@ -14,7 +14,7 @@ const imageStyle  = {
 
 const ArticleImage = ({urlToImage}) => (
     <div className="w3-card" >
-      <img src={urlToImage} style={imageStyle} alt="photo news" className="w3-margin-bottom"/>
+      <img src={urlToImage} style={imageStyle} className="w3-margin-bottom"/>
     </div>
 )
 

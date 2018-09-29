@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addToCart } from '../redux/actions'
 import { getVisibleArticles } from '../redux/reducers/articles'
 import ArticleItem from '../components/ArticleItem'
 import ArticlesList from '../components/ArticlesList'
@@ -18,7 +17,7 @@ const ArticlesContainer = ({ articles, addToCart }) => (
         urlToImage = {article.urlToImage}
         content = {article.content}
         source = {article.source.name}
-        onAddToCartClicked={() => addToCart(article.id)}  />
+       />
     )}
   </ArticlesList>
 )
@@ -34,8 +33,7 @@ ArticlesContainer.propTypes = {
     urlToImage : PropTypes.string.isRequired,
     content : PropTypes.string.isRequired,
     source : PropTypes.string.isRequired
-  })).isRequired,
-  addToCart: PropTypes.func.isRequired
+  })).isRequired
 }
 
 const mapStateToProps = state => ({
@@ -43,6 +41,5 @@ const mapStateToProps = state => ({
 })
 
 export default connect(
-  mapStateToProps,
-  { addToCart }
+  mapStateToProps
 )(ArticlesContainer)

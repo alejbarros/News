@@ -1,16 +1,8 @@
 import { combineReducers } from 'redux'
-import { RECEIVE_ARTICLES, ADD_TO_CART } from '../constants/ActionTypes'
+import { RECEIVE_ARTICLES } from '../constants/ActionTypes'
 
 const articles = (state, action) => {
-  switch (action.type) {
-    case ADD_TO_CART:
-      return {
-        ...state,
-        inventory: state.inventory - 1
-      }
-    default:
-      return state
-  }
+     return state  
 }
 
 const byId = (state = {}, action) => {
@@ -43,8 +35,6 @@ const visibleIds = (state = [], action) => {
       return state
   }
 }
-
-
 
 export default combineReducers({
   byId,

@@ -2,7 +2,7 @@ import React from 'react'
 import PanelTopNews from './PanelTopNews';
 import PanelLatestNews from './PanelLatestNews';
 
-const PanelLeft = ({ dispatch }) =>(
+const PanelLeft = () =>(
     <div class="w3-col m3">
         <PanelLatestNews />       
         <br></br>
