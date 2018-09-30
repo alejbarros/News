@@ -5,7 +5,7 @@ import '../css/w3.css'
 import ArticleImage from './ArticleImage';
 import ArticleFooter from './ArticleFooter';
 
-const ArticleItem = ({ article, onAddToCartClicked }) => (
+const ArticleItem = ({ article }) => (
   <div class="w3-container w3-card w3-white w3-round w3-margin">
     <Article
       title={article.title}      
@@ -21,10 +21,7 @@ const ArticleItem = ({ article, onAddToCartClicked }) => (
       source = {article.source.name}
       author = {article.author}
     />
-    <button
-      onClick={onAddToCartClicked}
-     >
-    </button>
+    <br></br>
   </div>
 )
 
